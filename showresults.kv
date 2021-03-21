@@ -1,0 +1,83 @@
+# -------------------------- #
+<AnswerInput>:
+	FloatLayout: 
+		canvas:
+			Color:
+				#rgba: (0.04, 0.15, 0.26, 1)
+			Rectangle:
+				pos: self.pos
+				size: self.size
+				source: self.background_down
+        background_down: 'ImagesApp/Azul4.png'
+    	spacing: 50
+    	padding: [20,20,20,20]  
+
+		# --- Layout de captura de imagem --- #
+		GridLayout:
+			cols: 4
+			rows: 4
+			id: camera_layout
+			canvas:
+				Color:
+					rgba: (0, 0, 0, .2)
+				Rectangle:
+					pos: self.pos
+					size: self.size
+			pos_hint: {'x': .25, 'top': .90}
+			size_hint: (0.50, 0.80)
+
+		FloatLayout:
+			orientation: 'vertical' 
+			pos_hint: {'x': .23, 'top': .90}
+			size_hint: (0.50, 0.60)
+
+			Image:
+				source: app.source_
+				halign: 'center'
+				size: 500, 500
+				border: (0, 0, 0, 1)  
+				pos_hint: {'x': .04, 'top': 1.2}
+
+			Label:
+				text: app.nome
+				font_size: 20
+				halign: 'center'
+				text_size: root.width-20, 18
+				font_name: 'Roboto-BoldItalic'
+				pos_hint: {'x': .04, 'top': .85}
+			Label:
+				text: app.cargo
+				halign: 'center'
+				font_size: 20
+				text_size: root.width-20, 18
+				font_name: 'Roboto-BoldItalic'
+				pos_hint: {'x': .04, 'top': .75}
+
+			Label:
+				text: app.email
+				halign: 'center'
+				font_size: 20
+				text_size: root.width-20, 18
+				font_name: 'Roboto-BoldItalic'
+				pos_hint: {'x': .04, 'top': .65}
+
+			Label:
+				text: app.cpf
+				halign: 'center'
+				font_size: 20
+				text_size: root.width-20, 18
+				font_name: 'Roboto-BoldItalic'
+				pos_hint: {'x': .04, 'top': .55}
+			
+			Label
+				text: 'Reconhecimento ok'
+				halign: 'center'
+				font_size: 20
+				color: [1,50,0,66] 
+				text_size: root.width-20, 18
+				font_name: 'Roboto-BoldItalic'
+				pos_hint: {'x': .04, 'top': .35}
+			
+		
+			
+		
