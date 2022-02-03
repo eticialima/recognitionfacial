@@ -29,7 +29,7 @@ ids,faces = getImagemComId()
 #print(ids)
 print("Treinando...")
 eigenFace.train(faces,ids)
-eigenFace.write('classificadorEigen.yml')
+eigenFace.write('lib/classificadorEigen.yml')
 
 
 print("Treinamento Realizado")

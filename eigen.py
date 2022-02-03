@@ -7,9 +7,9 @@ from kivy.lang import Builder
 from kivy.properties import StringProperty
   
 camera = cv2.VideoCapture(0)
-detectorFace = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+detectorFace = cv2.CascadeClassifier("lib/haarcascade_frontalface_default.xml")
 reconhecedor = cv2.face.EigenFaceRecognizer_create()
-reconhecedor.read("classificadorEigen.yml")
+reconhecedor.read("lib/classificadorEigen.yml")
 largura,altura = 220,220
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 id_t = ''
