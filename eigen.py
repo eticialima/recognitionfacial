@@ -1,11 +1,12 @@
-import cv2
+
 from database import *
-import os
 from kivy.app import App
 from kivy.uix.screenmanager import Screen
 from kivy.lang import Builder
-from kivy.properties import StringProperty
-  
+from kivy.properties import StringProperty 
+import os
+import cv2
+
 camera = cv2.VideoCapture(0)
 detectorFace = cv2.CascadeClassifier("lib/haarcascade_frontalface_default.xml")
 reconhecedor = cv2.face.EigenFaceRecognizer_create()
@@ -38,24 +39,24 @@ while (True):
     if cv2.waitKey(1) == ord('q'):
         Builder.load_file('showresults.kv') # Carrega o arquivo login.kv
         class AnswerInput(Screen):
-	        pass
+            pass
         class MainApp(App):
 
-	        global result
+            global result
 
-	        cursor.execute("SELECT id, nome, cargo, email, cpf FROM users WHERE id = ?",(str(id_t)))
-	        result = cursor.fetchone()
-	        print(result)
-	        nome = "Nome: " + result[1]
-	        cargo = "Cargo: " + result[2]
-	        email = "Email: " + result[3]
-	        cpf = "CPF: " + result[4]
-	        source_ = 'pessoas/pessoa.'+str(result[0])+'.1.jpg'
+            cursor.execute("SELECT id, nome, cargo, email, cpf FROM users WHERE id = ?",(str(id_t)))
+            result = cursor.fetchone()
+            print(result)
+            nome = "Nome: " + result[1]
+            cargo = "Cargo: " + result[2]
+            email = "Email: " + result[3]
+            cpf = "CPF: " + result[4]
+            source_ = 'pessoas/pessoa.'+str(result[0])+'.1.jpg'
 
-	        def build(self):
-		        return AnswerInput()
+            def build(self):
+                return AnswerInput()
         if __name__ == '__main__':
-	        MainApp().run()
+            MainApp().run()
         break
     if cv2.getWindowProperty("Face", cv2.WND_PROP_VISIBLE) <1:
         break

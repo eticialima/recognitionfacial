@@ -17,12 +17,12 @@ cursor = conn.cursor()
 cursor.execute("""
 
 CREATE TABLE users (
-	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	nome TEXT NULL ,
-	cargo TEXT NULL ,
-	email TEXT NULL ,	
-	cpf VARCHAR(11) NULL ,
-	identif VARCHAR(11) NULL
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    nome TEXT NULL ,
+    cargo TEXT NULL ,
+    email TEXT NULL ,	
+    cpf VARCHAR(11) NULL ,
+    identif VARCHAR(11) NULL
 
 );
 

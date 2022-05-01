@@ -1,8 +1,9 @@
+
 import cv2
-import numpy as np
+import numpy as np 
 from database import *
 import random
-import time
+import time 
 
 # ------------------------------ #
 select = cursor.execute("SELECT id FROM users ORDER BY id DESC LIMIT 1") 
