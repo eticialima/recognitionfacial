@@ -1,0 +1,74 @@
+#encoding: -*- utf-8 -*-
+<TReconhecimento>:
+	name: 'treconhecimento'
+
+	# --- Tela completa --- #
+	FloatLayout:
+		canvas:
+			Color:
+				#rgba: (0.04, 0.15, 0.26, 1)
+			Rectangle:
+				pos: self.pos
+				size: self.size
+				source: self.background_down
+        background_down: '../assets/ImagesApp/Azul4.png'
+
+		Label:
+			text: 'Bem-Vindo(a) a empresa XYZ \n Fique de frente para a camera no processo de check-in/check-out'
+	        # -- color:[1, 0, 0, 0.5]
+			size_hint: (1, 1.8) 
+			halign: 'center'
+			valign: 'middle'
+			bold: True
+			font_size: '20sp'
+			outline_width: 1
+            outline_color: [0,0,0]
+	        font_name: 'Roboto-Bold'
+
+
+		# --- Barra Superior --- #
+		FloatLayout:
+			pos_hint: {'x': 0, 'top': 1}
+			size_hint: (1, .1)
+ 
+			ModeloBtn:
+				pos_hint: {'x': .85, 'top': .80}
+				size_hint: (.10, .6)
+				text: 'Home'
+				on_release: app.root.current = 'tprincipal'  
+				outline_width: 1
+                outline_color: [0,0,0]
+	            font_name: 'RobotoMono-Regular'
+
+
+		# --- Layout de captura de imagem --- #
+		GridLayout:
+			cols: 4
+			rows: 4
+			id: camera_layout1
+			canvas:
+				Color:
+					rgba: (0, 0, 0, .2)
+				Rectangle:
+					pos: self.pos
+					size: self.size
+			pos_hint: {'x': .30, 'top': .85}
+			size_hint: (0.40, 0.60)
+
+
+		# --- Barra Inferior --- #
+		FloatLayout:
+			pos_hint: {'x': 0, 'y': .1}
+			size_hint: (1, .1) 
+
+			# --- Btn imprimir comprovante --- #
+			ModeloBtn:
+				id: eigen
+				pos_hint: {'x': .10, 'top': .80}
+				size_hint: (.17, .6)
+				text: 'Reconhecimento'
+			    on_press: root.eigen()
+				outline_width: 1
+                outline_color: [0,0,0]
+	            font_name: 'RobotoMono-Regular'
+ 
