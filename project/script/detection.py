@@ -55,7 +55,7 @@ while (True):
         region = video[y:y+h, x:x+w]
         if (amostra == 1):
             print(a)
-            cv2.imwrite("./static/pessoas/pessoa." + str(a) + "." + str(amostra) + ".jpg", region)
+            cv2.imwrite("./treinamento/pessoa." + str(a) + "." + str(amostra) + ".jpg", region)
         eyeCinza = cv2.cvtColor(region, cv2.COLOR_BGR2GRAY)
         eyeDetected = eye_cascade.detectMultiScale(eyeCinza)
         for (ox, oy, ow, oh) in eyeDetected:
@@ -64,7 +64,7 @@ while (True):
     if cv2.waitKey(1) & 0xFF == ord('q'):
         imagemFace = cv2.resize(
             imagemCinza[y:y + w, x:x + h], (largura, altura))
-        cv2.imwrite("./static/treinamento/pessoa." + str(a) + "." +
+        cv2.imwrite("./treinamento/pessoa." + str(a) + "." +
                     str(amostra) + ".jpg", imagemFace)
         print("foto" + str(amostra) + " Capturada com Sucesso")
         amostra += 1

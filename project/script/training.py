@@ -11,7 +11,7 @@ eigenFace = cv2.face.EigenFaceRecognizer_create(num_components = 50,threshold=0)
 fisherFace = cv2.face.FisherFaceRecognizer_create()
 lbph = cv2.face.LBPHFaceRecognizer_create()
 def getImagemComId():
-    caminhos = [os.path.join('./static/treinamento',f) for f in os.listdir('./static/treinamento')]
+    caminhos = [os.path.join('./treinamento',f) for f in os.listdir('./treinamento')]
     print(caminhos)
     faces = []
     ids = []

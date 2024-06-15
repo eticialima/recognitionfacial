@@ -35,7 +35,7 @@ while (True):
     cv2.imshow("Face",imagem)
 
     if cv2.waitKey(1) == ord('q'):
-        Builder.load_file('kv_showresults.kv')  # Carrega o arquivo 
+        Builder.load_file('../kv_showresults.kv')  # Carrega o arquivo 
 
         class AnswerInput(Screen):
             pass
@@ -52,7 +52,7 @@ while (True):
             cargo = "Cargo: " + result[2]
             email = "Email: " + result[3]
             cpf = "CPF: " + result[4]
-            source_ = './static/pessoas/pessoa.'+str(result[0])+'.1.jpg'
+            source_ = './treinamento/pessoa.'+str(result[0])+'.1.jpg'
 
             def build(self):
                 return AnswerInput()
