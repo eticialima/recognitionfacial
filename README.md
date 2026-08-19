@@ -45,7 +45,5 @@ python py_main.py
     2 - Depois preencha os dados do Usuário como nome, cpf, cargo e e-mail. E clica em Salvar.
     3 - Volte para Home e Clica em "Reconhecimento" Abrir reconhecimento e espere aparecer o quadrado vermelho com seu nome e aperte "Q" no teclado.
     4 - Pronto, registro de ponto feito com sucesso.
-```
-
-### Thanks ❤️
+``` 
 [@eticialima](https://www.instagram.com/eticialima) 
